@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package MatchMsg;
+
+message LoginRequest
+{
+	 bytes account = 1; //账号
+	 bytes device_code = 2;//设备号
+	 bytes user_name = 3;//用户名 
+	 int32 screen_h = 4;//屏幕高
+	 int32 screen_w = 5;//屏幕宽
+	 bytes resolution_ratio = 6; //分辨率
+     bytes version = 7; //版本号
+	 int32 app_type = 8; //平台类型 0 安卓 1 iphone 2 html 3 windows 4 mac 5 linux
+	 int32 network_mode = 9; 
+	 bytes os_version = 10;
+	 bytes channel = 11; //包的渠道
+	 bytes device_name = 12;//设备名
+	 int32 user_type = 13; //玩家类型 0游客账户 1 facebook
+	 bytes header_url = 14;//头像
+}
+
+message LoginResponse
+{
+	bytes token = 1; //json{"user_id", "user_type", "time":, "app_type", "version", "channel",}
+	int32 user_id = 2;
+	bytes cur_version = 3;
+	int32 update_type = 4;  //0 不需要更新, 1 需要更新 3 强制更新
+	bytes update_desc = 5;
+	bytes account = 6;
+	bytes lobby_ip = 7;
+	int32 lobby_port = 8;
+}
+
+
+message UserTokenLoginRequest
+{
+	bytes userToken = 1;
+}
+
+message UserTokenLoginResponse
+{
+	 
+}
+
+message NotifyLoginRequest
+{
+	int32 user_id = 1;
+	bytes account = 2; //账号
+	bytes device_code = 3;//设备号
+	bytes user_name = 4;//用户名 
+	int32 screen_h = 5;//屏幕高
+	int32 screen_w = 6;//屏幕宽
+	bytes resolution_ratio = 7; //分辨率
+    bytes version = 8; //版本号
+	int32 app_type = 9; //平台类型 0 安卓 1 iphone 2 html 3 windows 4 mac 5 linux
+	int32 network_mode = 10; 
+	bytes os_version = 11;
+	bytes channel = 12; //包的渠道
+	int32 user_type = 13;
+}
+
+message NotifyLoginResponse
+{
+	
+}
+

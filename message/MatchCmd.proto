@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package MatchCmd;
+enum EnumMatchCmd
+{
+	CMD_BEGIN = 0;
+	CMD_LOGIN = 1000;
+	CMD_ROBOT_LOGIN = 1001;
+	CMD_NOTIFY_LOGIN = 1002;
+	CMD_USER_TOKEN_LOGIN = 1003;
+}
+
